@@ -1,3 +1,5 @@
+#  PromptGod
+
 PromptGod is a powerful Chrome extension designed to elevate your prompt engineering skills on the fly. It intelligently analyzes the AI service you're using and enhances your prompts based on best practices, ensuring you get the best possible output every time.
 
 ---
@@ -27,8 +29,8 @@ promptgod/
 │   ├── Dockerfile
 │   ├── main.py
 │   ├── requirements.txt
-│   ├── setup.bat         <-- New
-│   └── runlocal.bat      <-- New
+│   ├── setup.bat        
+│   └── runlocal.bat      
 └── chrome-extension/
 ├── icons/
 ├── background.js
