@@ -21,6 +21,7 @@ PromptGod is a powerful Chrome extension designed to elevate your prompt enginee
 
 ---
 ## 📂 Project Structure
+```
 promptgod/
 ├── backend/
 │   ├── Dockerfile
@@ -37,7 +38,7 @@ promptgod/
 ├── modal.css
 ├── modal.js
 └── options.html
-
+```
 
 ---
 ## ⚙️ Setup and Installation
