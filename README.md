@@ -80,7 +80,7 @@ These steps will get the Python backend running on your local machine.
     * This will automatically create a Python virtual environment and install all required dependencies.
 
 4.  **Run the Local Server:**
-    * Double-click the `runlocal.bat` script.
+    * Double-click the `run.bat` script.
     * This will activate the environment and start the Flask server at `http://127.0.0.1:5000`.
 
 ### Part 3: Chrome Extension Setup (For Development)
