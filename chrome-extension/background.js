@@ -1,4 +1,3 @@
-
 const BACKEND_URL = 'http://127.0.0.1:5000'; // IMPORTANT: Replace with your deployed Cloud Run URL
 
 // --- Context Menu & Shortcut Setup ---
@@ -15,10 +14,21 @@ const triggerEnhancement = (tab) => {
     target: { tabId: tab.id },
     function: () => {
       // This function runs in the content script context
-      // It finds the active element and sends its value
       const activeEl = document.activeElement;
-      if (activeEl && (activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable || (activeEl.tagName === 'INPUT' && /text|search|email|url|password/.test(activeEl.type)))) {
-        window.postMessage({ type: "PROMPTGOD_INVOKE", prompt: activeEl.value || activeEl.textContent }, "*");
+
+      // Check for standard input, textarea, or contenteditable fields
+      const isValidTarget = activeEl && (
+          activeEl.tagName === 'TEXTAREA' || 
+          (activeEl.tagName === 'INPUT' && !/checkbox|radio|submit|button|file|color/.test(activeEl.type)) || 
+          activeEl.isContentEditable
+      );
+      
+      // Get the value. Use .value for inputs/textareas, and .textContent for contenteditable.
+      const promptValue = activeEl.value !== undefined ? activeEl.value : activeEl.textContent;
+
+      if (isValidTarget) {
+        // Send a post message to the content script with the prompt (or an empty string)
+        window.postMessage({ type: "PROMPTGOD_INVOKE", prompt: promptValue || '' }, "*");
       } else {
         alert("PromptGod: Please click inside a text box first!");
       }
