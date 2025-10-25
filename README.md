@@ -21,6 +21,7 @@ PromptGod is a powerful Chrome extension designed to elevate your prompt enginee
 * **AI:** Google Gemini API (Pro / Flash models)
 * **Deployment:** Google Cloud Run (recommended), Docker
 
+
 ---
 ## 📂 Project Structure
 ```
